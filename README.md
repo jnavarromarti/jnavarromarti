@@ -9,8 +9,8 @@
 <p align="center">
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
 </p>
-<p align="center">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.jpeg" width="200" align="middle" href="" ><img src="https://github.com/jnavarromarti/images/blob/main/img3.jpeg" width="400" align="center" href=""><img src="https://github.com/jnavarromarti/images/blob/main/img4.jpeg" width="200" align="center"href="">
+<p align="center" width="200">
+  ![](https://github.com/jnavarromarti/images/blob/main/img2.jpg) ![](https://github.com/jnavarromarti/images/blob/main/img3.jpg) ![](https://github.com/jnavarromarti/images/blob/main/img4.jpg)
   </p>
   <p align="center">
   <h4 align="center">Si quieres saber más de mi, visita mi perfil de Linkedin: <br></h4>
