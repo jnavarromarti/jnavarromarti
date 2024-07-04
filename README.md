@@ -10,7 +10,7 @@
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
 </p>
 <p align="center">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="200" align="center">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="200" align="center"><img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="400" align="center"><img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="200" align="center">
   </p>
   <p align="center">
   <h4 align="center">Si quieres saber más de mi, visita mi perfil de Linkedin: <br></h4>
