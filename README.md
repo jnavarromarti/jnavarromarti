@@ -10,7 +10,15 @@
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
 </p>
 <p align="center">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center"><img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center"><img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center">
+  <a href="https://github.com/jnavarromarti/Micropython">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center">
+    </a>
+  <a>
+  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center">
+  </a>
+    <a>
+    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center">
+    </a>
   </p>
   <p align="center">
   <h4 align="center">Si quieres saber más de mi, visita mi perfil de Linkedin: <br></h4>
