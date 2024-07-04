@@ -16,9 +16,11 @@
     </a>
   <a>
   <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center">
+    <figcaption>Tu subtítulo aquí</figcaption>
   </a>
     <a>
     <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center">
+      <figcaption>Tu subtítulo aquí</figcaption>
     </a>
   </p>
   <p align="center">
