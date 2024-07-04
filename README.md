@@ -9,18 +9,18 @@
 <p align="center">
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
 </p>
-<p>
+<p align="center">
   <a href="https://github.com/jnavarromarti/Micropython">
   <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center">
-    <figcaption align="bottom">Tu subtítulo aquí</figcaption>
+    <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
     </a>
     <a href="https://github.com/jnavarromarti/Micropython">
   <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center">
-    <figcaption align="bottom">Tu subtítulo aquí</figcaption>
+    <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
   </a>
       <a href="https://github.com/jnavarromarti/Micropython">
     <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center">
-      <figcaption align="bottom">Tu subtítulo aquí</figcaption>
+      <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
     </a>
   </p>
   <p align="center">
