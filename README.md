@@ -6,7 +6,7 @@
     y <br>
  ## este es mi repositorio de Github.
 </p>
-<p style="align="center">
+<p align="center">
   ### Estos son algunos de mis proyectos: <br>
 </p>
 <p align="center">
