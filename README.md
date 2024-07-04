@@ -11,13 +11,13 @@
 </p>
 <p align="center">
   <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center" style="padding: 2%">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center" style="padding: 5%">
     </a>
     <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center" style="padding: 2%">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center" style="padding: 10%">
   </a>
       <a href="https://github.com/jnavarromarti/Micropython">
-    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center" style="padding: 2%">
+    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center" style="padding: 5%">
     </a>
   </p>
   <p align="center">
