@@ -9,7 +9,7 @@
 <p align="center">
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
 </p>
-<p align="center">
+<p>
   <a href="https://github.com/jnavarromarti/Micropython">
   <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center">
     <figcaption align="bottom">Tu subtítulo aquí</figcaption>
