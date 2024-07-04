@@ -4,7 +4,7 @@
 <p align="center">
 <h3 align="center">¡Hola! Mi nombre es Joaquin Navarro <br></h3>
 <h3 align="center">y <br></h3>
- <h3 align="center">## este es mi repositorio de Github.</h3>
+ <h3 align="center">este es mi repositorio de Github.</h3>
 </p>
 <p align="center">
  <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
