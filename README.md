@@ -11,16 +11,13 @@
 </p>
 <p align="center">
   <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center">
-    <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
+  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center" style="padding: 2%">
     </a>
     <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center">
-    <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
+  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center" style="padding: 2%">
   </a>
       <a href="https://github.com/jnavarromarti/Micropython">
-    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center">
-      <figcaption align="bottom" width="20%" >Tu subtítulo aquí</figcaption>
+    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center" style="padding: 2%">
     </a>
   </p>
   <p align="center">
