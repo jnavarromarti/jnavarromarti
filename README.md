@@ -14,4 +14,4 @@
   </p>
   <p align="center">
   <h4 align="center">Si quieres saber más de mi, visita mi perfil de Linkedin: <br></h4>
-<a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/" style="align="center"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="23px" width="23px"></a>
+<a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/" align="center"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="23px" width="23px"></a>
