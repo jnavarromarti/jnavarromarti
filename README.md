@@ -2,7 +2,7 @@
   <img src="" width="200" align="center">
 </p>
 <p style="background-color: yellow; color: red; padding: 20px; border: 2px solid black; font-size: 20px;" align="center">
-  ¡Hola! Mi nombre es ## **Joaquin Navarro** <br>
+  ¡Hola! Mi nombre es **Joaquin Navarro** <br>
     y <br>
   este es mi repositorio de Github.
 </p>
