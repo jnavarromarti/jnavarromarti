@@ -4,9 +4,7 @@
 <h2 align="center">¡Hola! Mi nombre es Joaquin Navarro</h2>
 <h3 align="center">y</h3>
 <h2 align="center">este es mi repositorio de Github.</h2>
-
 <h4 align="center">Estos son algunos de mis proyectos:</h4>
-
 <table align="center">
   <tr>
     <td align="center">
@@ -29,9 +27,7 @@
     </td>
   </tr>
 </table>
-
 <h4 align="center">Si quieres saber más de mí, visita mi perfil de Linkedin:</h4>
-
 <p align="center">
   <a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="25px" width="100px">
