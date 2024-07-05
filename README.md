@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center" style="border-radius: 50%;">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
 </p> 
-<h3 align="center">¡Hola! Mi nombre es Joaquin Navarro</h3>
+<h2 align="center">¡Hola! Mi nombre es Joaquin Navarro</h2>
 <h3 align="center">y</h3>
-<h3 align="center">este es mi repositorio de Github.</h3>
+<h2 align="center">este es mi repositorio de Github.</h2>
 
 <h4 align="center">Estos son algunos de mis proyectos:</h4>
 
