@@ -11,19 +11,19 @@
   <tr>
     <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
-        <img src="path/to/your/private/image1.png" width="150" alt="Micropython">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="150" alt="Micropython">
       </a>
       <br>Micropython
     </td>
     <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
-        <img src="path/to/your/private/image2.png" width="150" alt="Yggdrasil">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="150" alt="Yggdrasil">
       </a>
       <br>Yggdrasil
     </td>
     <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
-        <img src="path/to/your/private/image3.png" width="150" alt="Prometeus">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="150" alt="Prometeus">
       </a>
       <br>Prometeus
     </td>
