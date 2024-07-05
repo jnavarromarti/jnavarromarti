@@ -1,4 +1,4 @@
-<p align="center" style="background-image: url('https://github.com/jnavarromarti/images/blob/main/cosmos-1853491.jpg')">
+<p align="center")">
   <img src="![cosmos-1853491](https://github.com/jnavarromarti/jnavarromarti/assets/57764974/d3069f76-9001-44ff-90db-0f54b9d91a05)
 95)
 " width="200" align="center">
