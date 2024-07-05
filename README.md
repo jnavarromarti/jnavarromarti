@@ -17,7 +17,7 @@
     </td>
     <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
-        <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="150" alt="Yggdrasil">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="300" alt="Yggdrasil">
       </a>
       <br>Yggdrasil
     </td>
