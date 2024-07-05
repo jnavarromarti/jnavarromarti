@@ -1,8 +1,7 @@
-<div style="background-image:url('https://github.com/jnavarromarti/images/blob/main/cosmos-1853491.jpg');">
+<div style="background-image:url('https://github.com/jnavarromarti/images/blob/main/cosmos-1853491.jpg');" width="80%">
 <p align="center">
   <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
-</p>
-  </div>
+</p> 
 <p align="center">
 <h3 align="center">¡Hola! Mi nombre es Joaquin Navarro <br></h3>
 <h3 align="center">y <br></h3>
@@ -28,3 +27,4 @@
   <p align="center">
 <a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/" align="center" ><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="25px" width="100px"></a>
   </p>
+</div>
