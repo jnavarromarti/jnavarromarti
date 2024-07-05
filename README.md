@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
+  <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center" style="border-radius: 50%;">
 </p> 
 <h3 align="center">¡Hola! Mi nombre es Joaquin Navarro</h3>
 <h3 align="center">y</h3>
