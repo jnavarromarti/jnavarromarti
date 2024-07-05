@@ -1,5 +1,6 @@
 <p align="center" style="background-image: url('https://github.com/jnavarromarti/images/blob/main/cosmos-1853491.jpg')">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
+  <img src="![img1](https://github.com/jnavarromarti/jnavarromarti/assets/57764974/2e873b67-0ae9-4a27-bc6a-23522cc4c195)
+" width="200" align="center">
 </p> 
 <p align="center">
 <h3 align="center">¡Hola! Mi nombre es Joaquin Navarro <br></h3>
