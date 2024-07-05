@@ -1,4 +1,4 @@
-<div style="background-color: #e0e0e0; padding: 15px; border-radius: 10px;">
+<div style="background-image:url('https://github.com/jnavarromarti/images/blob/main/cosmos-1853491.jpg');">
 <p align="center">
   <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
 </p>
