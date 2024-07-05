@@ -1,9 +1,9 @@
 <p align="center">
   <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
 </p> 
-<h2 align="center">¡Hola! Mi nombre es Joaquin Navarro</h2>
+<h3 align="center">¡Hola! Mi nombre es Joaquin Navarro</h3>
 <h3 align="center">y</h3>
-<h2 align="center">este es mi repositorio de Github.</h2>
+<h3 align="center">este es mi repositorio de Github.</h3>
 <h4 align="center">Estos son algunos de mis proyectos:</h4>
 <table align="center">
   <tr>
@@ -15,6 +15,7 @@
     </td>
     <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="150" alt="Yggdrasil">
         <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="300" alt="Yggdrasil">
       </a>
       <br>Yggdrasil
