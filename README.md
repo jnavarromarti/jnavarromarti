@@ -1,6 +1,8 @@
+<div style="background-color: #e0e0e0; padding: 15px; border-radius: 10px;">
 <p align="center">
   <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
 </p>
+  </div>
 <p align="center">
 <h3 align="center">¡Hola! Mi nombre es Joaquin Navarro <br></h3>
 <h3 align="center">y <br></h3>
