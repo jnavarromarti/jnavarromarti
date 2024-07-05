@@ -1,28 +1,39 @@
-<p align="center")">
+<p align="center">
   <img src="https://github.com/jnavarromarti/images/blob/main/img1.jpeg" width="200" align="center">
 </p> 
-<p align="center">
-<h3 align="center">¡Hola! Mi nombre es Joaquin Navarro <br></h3>
-<h3 align="center">y <br></h3>
- <h3 align="center">este es mi repositorio de Github.</h3>
-</p>
-<p align="center">
- <h4 align="center">Estos son algunos de mis proyectos: <br></h4>
-</p>
-<p align="center">
-  <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="20%" align="center" style="padding: 5%" alt="Micropython">
-    </a>
-    <a href="https://github.com/jnavarromarti/Micropython">
-  <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="40%" align="center" style="padding: 10%" alt="Yggdrasil">
-  </a>
+<h3 align="center">¡Hola! Mi nombre es Joaquin Navarro</h3>
+<h3 align="center">y</h3>
+<h3 align="center">este es mi repositorio de Github.</h3>
+
+<h4 align="center">Estos son algunos de mis proyectos:</h4>
+
+<table align="center">
+  <tr>
+    <td align="center">
       <a href="https://github.com/jnavarromarti/Micropython">
-    <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="20%" align="center" style="padding: 5%" alt="Prometeus">
-    </a>
-  </p>
-  <p align="center">
-  <h4 align="center">Si quieres saber más de mi, visita mi perfil de Linkedin: <br></h4>
-  </p>
-  <p align="center">
-<a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/" align="center" ><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="25px" width="100px"></a>
-  </p>
+        <img src="path/to/your/private/image1.png" width="150" alt="Micropython">
+      </a>
+      <br>Micropython
+    </td>
+    <td align="center">
+      <a href="https://github.com/jnavarromarti/Micropython">
+        <img src="path/to/your/private/image2.png" width="150" alt="Yggdrasil">
+      </a>
+      <br>Yggdrasil
+    </td>
+    <td align="center">
+      <a href="https://github.com/jnavarromarti/Micropython">
+        <img src="path/to/your/private/image3.png" width="150" alt="Prometeus">
+      </a>
+      <br>Prometeus
+    </td>
+  </tr>
+</table>
+
+<h4 align="center">Si quieres saber más de mí, visita mi perfil de Linkedin:</h4>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/ximo-navarro-mart%C3%AD-823995214/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/LinkedIn_2021.svg/1920px-LinkedIn_2021.svg.png" height="25px" width="100px">
+  </a>
+</p>
