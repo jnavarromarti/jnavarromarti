@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PR2 Simulacion sistema solar</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+
+        html,
+        h1 {
+            color: white;
+            text-align: center;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+        }
+
+        #viewport {
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<script src="physicsjs-full_0.7.js"></script>
+
+
+<body>
+    <h1>Simulación sistema solar</h1>
+    <script>
+        Physics(function (world) {
+
+            // creamos el render
+            var viewportBounds = Physics.aabb(0, 0, window.innerWidth, window.innerHeight)
+                , edgeBounce
+                , renderer
+                ;
+            // ejecutamos el canvas
+            renderer = Physics.renderer('canvas', {
+                el: 'viewport'
+            });
+
+            // añadimos el render al mundo
+            world.add(renderer);
+            // renderizamos cada paso
+            world.on('step', function () {
+                world.render();
+            });
+
+            // aseguramos que los objetos no salgan de la pantalla, con rebote. Aunque esta opcion la he desactivado.
+            edgeBounce = Physics.behavior('edge-collision-detection', {
+                aabb: viewportBounds
+                , restitution: 0.99
+                , cof: 0.8
+            });
+
+            // Reajustamos el tamaño del canvas cuando se cambia el tamaño de la ventana
+            window.addEventListener('resize', function () {
+                viewportBounds = Physics.aabb(0, 0, renderer.width, renderer.height);
+                edgeBounce.setAABB(viewportBounds);
+            }, true);
+
+            // Creamos el sol
+            var sun = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2, // posición inicial en el eje y (en el centro de la pantalla)
+                treatment: 'static', // el sol no se mueve
+                mass: 20, // masa del sol
+                radius: 50, // radio del sol
+                styles: {
+                    fillStyle: 'yellow'
+                }
+            });
+
+            // Crea el planeta Mercurio
+            var mercury = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 95, // posición inicial en el eje y (cerca del sol)
+                vx: 4.1, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 1, // radio de Mercurio
+                mass: .1, // masa de Mercurio
+                treatment: 'dynamic', // el planeta Mercurio se mueve
+                styles: {
+                    fillStyle: 'gray'
+                }
+            });
+            // Crea el planeta Venus
+            var venus = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 200, // posición inicial en el eje y (cerca del sol)
+                vx: 4.34, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 1, // radio de Venus
+                mass: .7, // masa de Venus
+                treatment: 'dynamic', // el planeta Venus se mueve
+                styles: {
+                    fillStyle: '#f7dc6f'
+                }
+            });
+            // Crea el planeta Tierra
+            var earth = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 350, // posición inicial en el eje y (cerca del sol)
+                vx: 1, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 5, // radio de la tierra
+                mass: 5, // masa de la tierra
+                treatment: 'dynamic', // la tierra se mueve
+                styles: {
+                    fillStyle: 'blue'
+                }
+            });
+            // Crea el planeta Marte
+            var mart = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 420, // posición inicial en el eje y (cerca del sol)
+                vx: 0.5, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 4, // radio de la Marte
+                mass: 3, // masa de la Marte
+                treatment: 'dynamic', 
+                styles: {
+                    fillStyle: 'red'
+                }
+            });
+            var jup = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 600, // posición inicial en el eje y (cerca del sol)
+                vx: 0.04, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 15, // radio de la Júpiter
+                mass: 10, // masa de la Júpiter
+                treatment: 'dynamic', 
+                styles: {
+                    fillStyle: 'brown'
+                }
+            });
+            var sat = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 720, // posición inicial en el eje y (cerca del sol)
+                vx: 0.1, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 11, // radio de la Saturno
+                mass: 10, // masa de la Saturno
+                treatment: 'dynamic', 
+                styles: {
+                    fillStyle: '#e9b23d'
+                }
+            });
+            // Crea el planeta Urano
+            var uranus = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 900, // posición inicial en el eje y (cerca del sol)
+                vx: 0.1, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 10, // radio de la Urano
+                mass: 9, // masa de la Urano
+                treatment: 'dynamic', 
+                styles: {
+                    fillStyle: '#3de9df'
+                }
+            });
+            // Crea el planeta Neptuno
+            var neptuno = Physics.body('circle', {
+                x: renderer.width / 2, // posición inicial en el eje x (en el centro de la pantalla)
+                y: renderer.height / 2 - 1000, // posición inicial en el eje y (cerca del sol)
+                vx: 0.1, // velocidad constante en el eje x (para describir una circunferencia)
+                radius: 9, // radio de la Neptuno
+                mass: 8, // masa de la Neptuno
+                treatment: 'dynamic', 
+                styles: {
+                    fillStyle: '#3f38d0'
+                }
+            });
+            // Agregamos el cinturon de asteroides
+            for (var i = 0; i < 50; i++) {
+                var asteroid = Physics.body('circle', {
+                    x: window.innerWidth / 2 + 500 * Math.cos(i * 2 * Math.PI / 40),   // posición inicial en el eje x 
+                    y: window.innerHeight / 2 + 500 * Math.sin(i * 2 * Math.PI / 40), // posición inicial en el eje y 
+                    treatment: 'static',
+                    radius: Math.random() * 1 + 1,
+                    mass: Math.random() * 0.2 + 0.1,
+                    styles: {
+                        fillStyle: '#cccccc'
+                    }
+                });
+                world.add(asteroid); // Agrega el asteroide al mundo
+            }
+            // Configura la orbita de los planetas alrededor del sol
+            // Agregamos las fuerzas al mundo
+            world.add([
+                Physics.behavior('newtonian', { strength: 0.005 }),
+                Physics.behavior('body-impulse-response'),
+                Physics.behavior('body-collision-detection'),
+                Physics.behavior('sweep-prune'),
+            ]);
+
+            var constraints = Physics.behavior('verlet-constraints', {
+                iterations: 3
+            });
+
+            // Agrega el sol y los planetas al mundo
+            world.add([sun, mercury, venus, earth, mart, jup, sat, uranus, neptuno]);
+
+            // Agrega una restricción de distancia entre el sol, los planetas y el cinturon de asteroides
+            constraints.distanceConstraint(sun, mercury, 0.5, -75);
+            constraints.distanceConstraint(sun, venus, 0.5, -200);
+            constraints.distanceConstraint(sun, earth, 0.5, -350);
+            constraints.distanceConstraint(sun, mart, 0.5, -420);
+            constraints.distanceConstraint(sun, jup, 0.5, -600);
+            constraints.distanceConstraint(sun, sat, 0.5, -720);
+            constraints.distanceConstraint(sun, uranus, 0.5, -900);
+            constraints.distanceConstraint(sun, neptuno, 0.5, -1000);
+            constraints.distanceConstraint(sun, asteroid, 0.5,-600);
+            world.add(constraints);
+
+            // Suscribimos los eventos de renderizado
+            Physics.util.ticker.on(function (time) {
+                world.step(time);
+            });
+        });
+    </script>
+</body>
+
+</html>
