@@ -14,13 +14,13 @@
       <br>Orochi
     </td>
     <td align="center">
-      <a href="https://github.com/jnavarromarti/Micropython">
+      <a href="https://github.com/jnavarromarti/jnavarromarti/">
         <img src="https://github.com/jnavarromarti/images/blob/main/img3.png" width="150" alt="Yggdrasil">
       </a>
       <br>Yggdrasil
     </td>
     <td align="center">
-      <a href="https://github.com/jnavarromarti/Micropython">
+      <a href="https://github.com/jnavarromarti/jnavarromarti/">
         <img src="https://github.com/jnavarromarti/images/blob/main/img4.png" width="150" alt="Prometeus">
       </a>
       <br>Prometeus
