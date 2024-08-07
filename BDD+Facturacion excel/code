@@ -1,10 +1,14 @@
 Option Explicit
+Dim GenerarNumeroFactura As Boolean
+
 Sub Save()
     Dim Celda As Range
     Dim Fila As Long
     Dim CamposFaltantes As String
     Dim DNI As String
-
+    Dim ClienteExiste As Boolean
+    Dim ActualizarDatos As Boolean
+    
     CamposFaltantes = ""
     DNI = Hoja1.Range("S9").Value
 
@@ -27,8 +31,7 @@ Sub Save()
         Exit Sub
     End If
 
-    Set Celda = Hoja2.Range("A:A").Find(What:=Hoja1.Range("G9").Value, _
-                                            After:=Hoja2.Range("A1"))
+    Set Celda = Hoja2.Range("A:A").Find(What:=Hoja1.Range("G9").Value, After:=Hoja2.Range("A1"))
     
     If Celda Is Nothing Then
         Fila = Hoja2.Cells(Rows.Count, 1).End(xlUp).Row + 1
@@ -41,8 +44,30 @@ Sub Save()
         Hoja2.Cells(Fila, 7).Value = Hoja1.Range("G15").Value
         Hoja2.Cells(Fila, 8).Value = Hoja1.Range("S15").Value
         Hoja2.Cells(Fila, 9).Value = Hoja1.Range("M18").Value
+        MsgBox "Cliente guardado correctamente."
     Else
-        MsgBox "El paciente ya existe."
+        ClienteExiste = True
+        ActualizarDatos = False
+        
+        If Hoja1.Range("G12").Value <> Celda.Offset(0, 4).Value Then ActualizarDatos = True
+        If Hoja1.Range("S12").Value <> Celda.Offset(0, 5).Value Then ActualizarDatos = True
+        If Hoja1.Range("G15").Value <> Celda.Offset(0, 6).Value Then ActualizarDatos = True
+        If Hoja1.Range("S15").Value <> Celda.Offset(0, 7).Value Then ActualizarDatos = True
+        If Hoja1.Range("M18").Value <> Celda.Offset(0, 8).Value Then ActualizarDatos = True
+        
+        If ActualizarDatos Then
+            Celda.Offset(0, 1).Value = Hoja1.Range("G6").Value
+            Celda.Offset(0, 2).Value = Hoja1.Range("S6").Value
+            Celda.Offset(0, 3).Value = Hoja1.Range("S9").Value
+            Celda.Offset(0, 4).Value = Hoja1.Range("G12").Value
+            Celda.Offset(0, 5).Value = Hoja1.Range("S12").Value
+            Celda.Offset(0, 6).Value = Hoja1.Range("G15").Value
+            Celda.Offset(0, 7).Value = Hoja1.Range("S15").Value
+            Celda.Offset(0, 8).Value = Hoja1.Range("M18").Value
+            MsgBox "Cliente correctamente actualizado."
+        Else
+            MsgBox "El paciente ya existe."
+        End If
     End If
     
     Hoja1.Range("G9").Value = ""
@@ -152,7 +177,7 @@ Sub Delete()
 End Sub
 
 Sub Bill()
-    Dim Celda As Range
+ Dim Celda As Range
     Dim Nombre As String
     Dim Apellidos As String
     Dim Clave As String
@@ -181,10 +206,6 @@ Sub Bill()
         Hoja4.Range("D12").Value = ObtenerNumeroFactura()
     End If
     
-    If Not ControlarCamposFactura() Then
-        Exit Sub
-    End If
-    
     Concepto = InputBox("Ingrese el concepto de la factura:", "Concepto de la factura")
     
     If Concepto = "" Then
@@ -208,17 +229,34 @@ Sub Bill()
     Hoja4.Range("D22").Value = CodigoPostal
     Hoja4.Range("D24").Value = ImporteTotal & " €"
     
-    If MsgBox("¿Desea imprimir la factura?", vbYesNo + vbQuestion, "Imprimir factura") = vbYes Then
-        Hoja4.PrintOut
-    End If
-    
     MsgBox "La factura ha sido generada correctamente."
     
     Set Celda = Hoja2.Range("A:A").Find(What:=Clave, After:=Hoja2.Range("A1"))
     If Not Celda Is Nothing Then
         Celda.Offset(0, 8).Value = 0
     End If
+End Sub
 
+Sub Imprimir()
+    If Not ControlarCamposFactura() Then
+        Exit Sub
+    End If
+    
+    If MsgBox("¿Desea imprimir la factura?", vbYesNo + vbQuestion, "Imprimir factura") = vbYes Then
+        Hoja4.PrintOut
+    End If
+    
+    Hoja4.Range("J12").Value = ""
+    Hoja4.Range("D14").Value = ""
+    Hoja4.Range("J14").Value = ""
+    Hoja4.Range("D16").Value = ""
+    Hoja4.Range("J16").Value = ""
+    Hoja4.Range("D18").Value = ""
+    Hoja4.Range("D20").Value = ""
+    Hoja4.Range("J19").Value = ""
+    Hoja4.Range("D22").Value = ""
+    Hoja4.Range("D24").Value = ""
+    Hoja4.Range("D26").Value = ""
 End Sub
 
 Function EsDNIValido(DNI As String) As Boolean
@@ -250,7 +288,6 @@ Function EsDNIValido(DNI As String) As Boolean
         EsDNIValido = False
     End If
 End Function
-Dim GenerarNumeroFactura As Boolean
 
 Function ObtenerNumeroFactura() As String
     Dim AnioActual As String
@@ -259,7 +296,7 @@ Function ObtenerNumeroFactura() As String
     
     AnioActual = Right(Year(Date), 2)
     
-    Set Celda = Hoja2.Range("B:B").Find(What:=AnioActual, LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlPrevious)
+    Set Celda = Hoja4.Range("J12").Find(What:=AnioActual, LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlPrevious)
     
     If Not Celda Is Nothing Then
         UltimoNumero = CLng(Mid(Celda.Value, 4))
@@ -275,12 +312,12 @@ Function ControlarCamposFactura() As Boolean
     Dim CamposFaltantes As String
     
     CamposFaltantes = ""
-    If Hoja4.Range("D12").Value = "" Then CamposFaltantes = CamposFaltantes & "Factura nº (D12)" & vbCrLf
+    If Hoja4.Range("D12").Value = "" Then CamposFaltantes = CamposFaltantes & "Factura nï¿½ (D12)" & vbCrLf
     If Hoja4.Range("D14").Value = "" Then CamposFaltantes = CamposFaltantes & "Nombre (D14)" & vbCrLf
     If Hoja4.Range("D16").Value = "" Then CamposFaltantes = CamposFaltantes & "Clave cliente (D16)" & vbCrLf
-    If Hoja4.Range("D18").Value = "" Then CamposFaltantes = CamposFaltantes & "Dirección (D18)" & vbCrLf
-    If Hoja4.Range("D20").Value = "" Then CamposFaltantes = CamposFaltantes & "Población (D20)" & vbCrLf
-    If Hoja4.Range("D22").Value = "" Then CamposFaltantes = CamposFaltantes & "Código Postal (D22)" & vbCrLf
+    If Hoja4.Range("D18").Value = "" Then CamposFaltantes = CamposFaltantes & "Direcciï¿½n (D18)" & vbCrLf
+    If Hoja4.Range("D20").Value = "" Then CamposFaltantes = CamposFaltantes & "Poblaciï¿½n (D20)" & vbCrLf
+    If Hoja4.Range("D22").Value = "" Then CamposFaltantes = CamposFaltantes & "Cï¿½digo Postal (D22)" & vbCrLf
     If Hoja4.Range("D24").Value = "" Then CamposFaltantes = CamposFaltantes & "Importe total (D24)" & vbCrLf
     If Hoja4.Range("D26").Value = "" Then CamposFaltantes = CamposFaltantes & "Concepto (D26)" & vbCrLf
     If Hoja4.Range("J14").Value = "" Then CamposFaltantes = CamposFaltantes & "Apellidos (J14)" & vbCrLf
@@ -298,8 +335,8 @@ End Function
 Sub ToggleGenerarNumeroFactura()
     GenerarNumeroFactura = Not GenerarNumeroFactura
     If GenerarNumeroFactura Then
-        MsgBox "La generación automática de números de factura está activada."
+        MsgBox "La generaciï¿½n automï¿½tica de nï¿½meros de factura estï¿½ activada."
     Else
-        MsgBox "La generación automática de números de factura está desactivada."
+        MsgBox "La generaciï¿½n automï¿½tica de nï¿½meros de factura estï¿½ desactivada."
     End If
 End Sub
