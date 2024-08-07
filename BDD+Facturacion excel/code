@@ -1,0 +1,305 @@
+Option Explicit
+Sub Save()
+    Dim Celda As Range
+    Dim Fila As Long
+    Dim CamposFaltantes As String
+    Dim DNI As String
+
+    CamposFaltantes = ""
+    DNI = Hoja1.Range("S9").Value
+
+    If Hoja1.Range("G6").Value = "" Then CamposFaltantes = CamposFaltantes & "Nombre (G6)" & vbCrLf
+    If Hoja1.Range("S6").Value = "" Then CamposFaltantes = CamposFaltantes & "Apellidos (S6)" & vbCrLf
+    If Hoja1.Range("G9").Value = "" Then CamposFaltantes = CamposFaltantes & "Clave del Paciente (G9)" & vbCrLf
+    If DNI = "" Then CamposFaltantes = CamposFaltantes & "DNI (S9)" & vbCrLf
+    If Not EsDNIValido(DNI) Then
+        MsgBox "El DNI proporcionado no es válido. Introduce un DNI válido."
+        Exit Sub
+    End If
+    If Hoja1.Range("G12").Value = "" Then CamposFaltantes = CamposFaltantes & "Dirección (G12)" & vbCrLf
+    If Hoja1.Range("S12").Value = "" Then CamposFaltantes = CamposFaltantes & "Población (S12)" & vbCrLf
+    If Hoja1.Range("G15").Value = "" Then CamposFaltantes = CamposFaltantes & "Provincia (G15)" & vbCrLf
+    If Hoja1.Range("S15").Value = "" Then CamposFaltantes = CamposFaltantes & "Código Postal (S15)" & vbCrLf
+    If Hoja1.Range("M18").Value = "" Then CamposFaltantes = CamposFaltantes & "Número de Sesiones (M18)" & vbCrLf
+
+    If CamposFaltantes <> "" Then
+        MsgBox "Faltan los siguientes campos:" & vbCrLf & CamposFaltantes
+        Exit Sub
+    End If
+
+    Set Celda = Hoja2.Range("A:A").Find(What:=Hoja1.Range("G9").Value, _
+                                            After:=Hoja2.Range("A1"))
+    
+    If Celda Is Nothing Then
+        Fila = Hoja2.Cells(Rows.Count, 1).End(xlUp).Row + 1
+        Hoja2.Cells(Fila, 1).Value = Hoja1.Range("G9").Value
+        Hoja2.Cells(Fila, 2).Value = Hoja1.Range("G6").Value
+        Hoja2.Cells(Fila, 3).Value = Hoja1.Range("S6").Value
+        Hoja2.Cells(Fila, 4).Value = Hoja1.Range("S9").Value
+        Hoja2.Cells(Fila, 5).Value = Hoja1.Range("G12").Value
+        Hoja2.Cells(Fila, 6).Value = Hoja1.Range("S12").Value
+        Hoja2.Cells(Fila, 7).Value = Hoja1.Range("G15").Value
+        Hoja2.Cells(Fila, 8).Value = Hoja1.Range("S15").Value
+        Hoja2.Cells(Fila, 9).Value = Hoja1.Range("M18").Value
+    Else
+        MsgBox "El paciente ya existe."
+    End If
+    
+    Hoja1.Range("G9").Value = ""
+    Hoja1.Range("G6").Value = ""
+    Hoja1.Range("S6").Value = ""
+    Hoja1.Range("S9").Value = ""
+    Hoja1.Range("G12").Value = ""
+    Hoja1.Range("S12").Value = ""
+    Hoja1.Range("G15").Value = ""
+    Hoja1.Range("S15").Value = ""
+    Hoja1.Range("M18").Value = ""
+End Sub
+
+
+Sub Search()
+    Dim Celda As Range
+    Dim Clave As String
+    Dim Nombre As String
+    Dim Apellidos As String
+    Dim Encontrado As Boolean
+    
+    Clave = Hoja1.Range("G9").Value
+    Nombre = Hoja1.Range("G6").Value
+    Apellidos = Hoja1.Range("S6").Value
+    
+    If Clave = "" And (Nombre = "" Or Apellidos = "") Then
+        MsgBox "Inserta la clave del paciente o el nombre y apellidos."
+        Exit Sub
+    End If
+    
+    Encontrado = False
+    
+    If Clave <> "" Then
+        Set Celda = Hoja2.Range("A:A").Find(What:=Clave, After:=Hoja2.Range("A1"))
+        If Not Celda Is Nothing Then
+            Encontrado = True
+            Hoja1.Range("G9").Value = Celda.Value
+            Hoja1.Range("G6").Value = Celda.Offset(0, 1).Value
+            Hoja1.Range("S6").Value = Celda.Offset(0, 2).Value
+            Hoja1.Range("S9").Value = Celda.Offset(0, 3).Value
+            Hoja1.Range("G12").Value = Celda.Offset(0, 4).Value
+            Hoja1.Range("S12").Value = Celda.Offset(0, 5).Value
+            Hoja1.Range("G15").Value = Celda.Offset(0, 6).Value
+            Hoja1.Range("S15").Value = Celda.Offset(0, 7).Value
+            Hoja1.Range("M18").Value = Celda.Offset(0, 8).Value
+        End If
+    End If
+    
+    If Not Encontrado And Nombre <> "" And Apellidos <> "" Then
+        Set Celda = Hoja2.Range("B:B").Find(What:=Nombre, After:=Hoja2.Range("B1"))
+        If Not Celda Is Nothing And Celda.Offset(0, 1).Value = Apellidos Then
+            Encontrado = True
+            Hoja1.Range("G9").Value = Celda.Offset(0, -1).Value
+            Hoja1.Range("G6").Value = Celda.Value
+            Hoja1.Range("S6").Value = Celda.Offset(0, 1).Value
+            Hoja1.Range("S9").Value = Celda.Offset(0, 2).Value
+            Hoja1.Range("G12").Value = Celda.Offset(0, 3).Value
+            Hoja1.Range("S12").Value = Celda.Offset(0, 4).Value
+            Hoja1.Range("G15").Value = Celda.Offset(0, 5).Value
+            Hoja1.Range("S15").Value = Celda.Offset(0, 6).Value
+            Hoja1.Range("M18").Value = Celda.Offset(0, 7).Value
+        End If
+    End If
+    
+    If Not Encontrado Then
+        MsgBox "El paciente no existe."
+    End If
+End Sub
+Sub Clear()
+            Hoja1.Range("G9").Value = ""
+            Hoja1.Range("G6").Value = ""
+            Hoja1.Range("S6").Value = ""
+            Hoja1.Range("S9").Value = ""
+            Hoja1.Range("G12").Value = ""
+            Hoja1.Range("S12").Value = ""
+            Hoja1.Range("G15").Value = ""
+            Hoja1.Range("S15").Value = ""
+            Hoja1.Range("M18").Value = ""
+End Sub
+
+Sub Delete()
+    Dim Celda As Range
+    
+    If Hoja1.Range("G9").Value = "" Then
+        MsgBox "Escribe la clave del cliente que deaseas eliminar."
+    Else
+        Set Celda = Hoja2.Range("A:A").Find(What:=Hoja1.Range("G9").Value, _
+                                                After:=Hoja2.Range("A1"))
+        If Celda Is Nothing Then
+            Hoja1.Range("G9").Value = ""
+            MsgBox "El paciente no exite."
+        Else
+            Celda.EntireRow.Delete
+            Hoja1.Range("G9").Value = ""
+            MsgBox "El paciente ha sido eliminado correctamente."
+        End If
+    End If
+        Hoja1.Range("G9").Value = ""
+        Hoja1.Range("G6").Value = ""
+        Hoja1.Range("S6").Value = ""
+        Hoja1.Range("S9").Value = ""
+        Hoja1.Range("G12").Value = ""
+        Hoja1.Range("S12").Value = ""
+        Hoja1.Range("G15").Value = ""
+        Hoja1.Range("S15").Value = ""
+        Hoja1.Range("M18").Value = ""
+End Sub
+
+Sub Bill()
+    Dim Celda As Range
+    Dim Nombre As String
+    Dim Apellidos As String
+    Dim Clave As String
+    Dim NIF As String
+    Dim Direccion As String
+    Dim Poblacion As String
+    Dim Provincia As String
+    Dim CodigoPostal As String
+    Dim NumSesiones As Integer
+    Dim ImporteTotal As Double
+    Dim Concepto As String
+    Dim FechaActual As String
+    
+    Nombre = Hoja1.Range("G6").Value
+    Apellidos = Hoja1.Range("S6").Value
+    Clave = Hoja1.Range("G9").Value
+    NIF = Hoja1.Range("S9").Value
+    Direccion = Hoja1.Range("G12").Value
+    Poblacion = Hoja1.Range("S12").Value
+    Provincia = Hoja1.Range("G15").Value
+    CodigoPostal = Hoja1.Range("S15").Value
+    NumSesiones = Hoja1.Range("M18").Value
+    FechaActual = Date
+    
+    If GenerarNumeroFactura Then
+        Hoja4.Range("D12").Value = ObtenerNumeroFactura()
+    End If
+    
+    If Not ControlarCamposFactura() Then
+        Exit Sub
+    End If
+    
+    Concepto = InputBox("Ingrese el concepto de la factura:", "Concepto de la factura")
+    
+    If Concepto = "" Then
+        MsgBox "Debe ingresar un concepto para la factura."
+        Exit Sub
+    Else
+        Hoja4.Range("D26").Value = Concepto
+    End If
+    
+    ' Para modificar el precio de la sesion, modificar solo el numero de la multiplicacion
+    ImporteTotal = NumSesiones * 55
+    
+    Hoja4.Range("J12").Value = FechaActual
+    Hoja4.Range("D14").Value = Nombre
+    Hoja4.Range("J14").Value = Apellidos
+    Hoja4.Range("D16").Value = Clave
+    Hoja4.Range("J16").Value = NIF
+    Hoja4.Range("D18").Value = Direccion
+    Hoja4.Range("D20").Value = Poblacion
+    Hoja4.Range("J19").Value = Provincia
+    Hoja4.Range("D22").Value = CodigoPostal
+    Hoja4.Range("D24").Value = ImporteTotal & " €"
+    
+    If MsgBox("¿Desea imprimir la factura?", vbYesNo + vbQuestion, "Imprimir factura") = vbYes Then
+        Hoja4.PrintOut
+    End If
+    
+    MsgBox "La factura ha sido generada correctamente."
+    
+    Set Celda = Hoja2.Range("A:A").Find(What:=Clave, After:=Hoja2.Range("A1"))
+    If Not Celda Is Nothing Then
+        Celda.Offset(0, 8).Value = 0
+    End If
+
+End Sub
+
+Function EsDNIValido(DNI As String) As Boolean
+    Dim Numeros As String
+    Dim Letra As String
+    Dim Letras As String
+    Dim PosicionLetra As Integer
+    
+    Letras = "TRWAGMYFPDXBNJZSQVHLCKET"
+    
+    If Len(DNI) <> 9 Then
+        EsDNIValido = False
+        Exit Function
+    End If
+    
+    Numeros = Left(DNI, 8)
+    Letra = Right(DNI, 1)
+    
+    If Not IsNumeric(Numeros) Then
+        EsDNIValido = False
+        Exit Function
+    End If
+    
+    PosicionLetra = CLng(Numeros) Mod 23
+    
+    If Mid(Letras, PosicionLetra + 1, 1) = UCase(Letra) Then
+        EsDNIValido = True
+    Else
+        EsDNIValido = False
+    End If
+End Function
+Dim GenerarNumeroFactura As Boolean
+
+Function ObtenerNumeroFactura() As String
+    Dim AnioActual As String
+    Dim UltimoNumero As Long
+    Dim Celda As Range
+    
+    AnioActual = Right(Year(Date), 2)
+    
+    Set Celda = Hoja2.Range("B:B").Find(What:=AnioActual, LookAt:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlPrevious)
+    
+    If Not Celda Is Nothing Then
+        UltimoNumero = CLng(Mid(Celda.Value, 4))
+    Else
+        UltimoNumero = 0
+    End If
+    
+    UltimoNumero = UltimoNumero + 1
+    ObtenerNumeroFactura = AnioActual & " " & Format(UltimoNumero, "00000")
+End Function
+
+Function ControlarCamposFactura() As Boolean
+    Dim CamposFaltantes As String
+    
+    CamposFaltantes = ""
+    If Hoja4.Range("D12").Value = "" Then CamposFaltantes = CamposFaltantes & "Factura nº (D12)" & vbCrLf
+    If Hoja4.Range("D14").Value = "" Then CamposFaltantes = CamposFaltantes & "Nombre (D14)" & vbCrLf
+    If Hoja4.Range("D16").Value = "" Then CamposFaltantes = CamposFaltantes & "Clave cliente (D16)" & vbCrLf
+    If Hoja4.Range("D18").Value = "" Then CamposFaltantes = CamposFaltantes & "Dirección (D18)" & vbCrLf
+    If Hoja4.Range("D20").Value = "" Then CamposFaltantes = CamposFaltantes & "Población (D20)" & vbCrLf
+    If Hoja4.Range("D22").Value = "" Then CamposFaltantes = CamposFaltantes & "Código Postal (D22)" & vbCrLf
+    If Hoja4.Range("D24").Value = "" Then CamposFaltantes = CamposFaltantes & "Importe total (D24)" & vbCrLf
+    If Hoja4.Range("D26").Value = "" Then CamposFaltantes = CamposFaltantes & "Concepto (D26)" & vbCrLf
+    If Hoja4.Range("J14").Value = "" Then CamposFaltantes = CamposFaltantes & "Apellidos (J14)" & vbCrLf
+    If Hoja4.Range("J16").Value = "" Then CamposFaltantes = CamposFaltantes & "N.I.F (J16)" & vbCrLf
+    If Hoja4.Range("J19").Value = "" Then CamposFaltantes = CamposFaltantes & "Provincia (J19)" & vbCrLf
+    
+    If CamposFaltantes <> "" Then
+        MsgBox "Faltan los siguientes campos en la factura:" & vbCrLf & CamposFaltantes
+        ControlarCamposFactura = False
+    Else
+        ControlarCamposFactura = True
+    End If
+End Function
+
+Sub ToggleGenerarNumeroFactura()
+    GenerarNumeroFactura = Not GenerarNumeroFactura
+    If GenerarNumeroFactura Then
+        MsgBox "La generación automática de números de factura está activada."
+    Else
+        MsgBox "La generación automática de números de factura está desactivada."
+    End If
+End Sub
