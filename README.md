@@ -8,10 +8,10 @@
 <table align="center">
   <tr>
     <td align="center">
-      <a href="https://github.com/jnavarromarti/Micropython">
-        <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="150" alt="Micropython">
+      <a href="https://github.com/jnavarromarti/Micropython/Cloto">
+        <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="150" alt="Cloto">
       </a>
-      <br>Orochi
+      <br>Cloto
     </td>
       <td align="center">
       <a href= "https://github.com/jnavarromarti/One-Adventure">
