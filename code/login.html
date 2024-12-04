@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div id="block">
+    <div id="signin">
         <div id="form">
-            <form action="login.php" mthod="POST">
+            <form action="login.php" method="POST">
                 <div id="user-form-group">
                     <label for="user">User:</label>
                     <input type="text" id="user" name="user" placeholder="Enter user" required>
@@ -21,17 +21,72 @@
                     <input type="password" id="password" name="password" placeholder="Enter password" required>
                 </div>
                 <div id="buttons-form-group">
-                    <input type="submit" value="Sign in">
-                    <input type="submit" value="Sign up">
+                    <input type="submit" name="signin" value="Sign in">
+                    <input type="submit" name="signup" value="Sign up">
                 </div>
             </form>
         </div>
     </div>
-    <div id="registrer"> 
-        <div>
-            
+    <div id="registrer">
+        <div id="registrerform">
+            <form action="login.php" method="POST">
+                <h1>Sign up!</h1>
+                <div id="">
+                    <div id="">
+                        <label for="name" style="color: aliceblue;">Name:</label>
+                        <input type="text" name="nameuser" id="nameuser" placeholder="Enter your name" required>
+                    </div>
+                    <div id="">
+                        <label for="lastname" style="color: aliceblue;">Last name:</label>
+                        <input type="text" name="lastuser" id="lastuser" placeholder="Enter your last name">
+                    </div>
+                    <div id="">
+                        <label for="newuser" style="color: aliceblue;">User:</label>
+                        <input type="text" name="newuser" id="newuser" placeholder="Enter your user name" required>
+                    </div>
+                    <div id="">
+                        <label for="newpassword" style="color: aliceblue;">Password:</label>
+                        <input type="password" name="newpassword" id="newpassword" placeholder="Enter your password" required>
+                    </div>
+                    <div id="">
+                        <label for="newpassword2" style="color: aliceblue;">Verify your password:</label>
+                        <input type="password" name="newpassword2" id="newpassword2" placeholder="Verify your password" required>
+                    </div>
+                    <div id="">
+                        <label for="birthdate" style="color: aliceblue;">Birth date:</label>
+                        <input type="date" name="birthdate" id="birthdate">
+                    </div>
+                </div>
+                <div id="">
+                    <div id="">
+                        <label for="telephone" style="color: aliceblue;">Telephone:</label>
+                        <input type="text" name="telephone" id="telephone" placeholder="Enter your telephone">
+                    </div>
+                    <div id="">
+                        <label for="userid" style="color: aliceblue;">ID:</label>
+                        <input type="text" name="userid" id="userid" placeholder="Enter your id card" required>
+                    </div>
+                    <div id="">
+                        <label for="email" style="color: aliceblue;">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div id="">
+                        <label for="city" style="color: aliceblue;">City</label>
+                        <select id="city" name="city">
+                            <option value="" selected disabled> </option>
+                        </select>
+                    </div>
+                    <div id="">
+                        <label for="postcode" style="color: aliceblue;">Postal code</label>
+                        <input type="number" name="postalcode" id="postalcode" placeholder="Enter your postal code">
+                    </div>
+                </div>
+                <div id="buttons-signup-group">
+                    <input type="submit" name="registrer" value="Sign up">
+                </div>
+            </form>
         </div>
     </div>
-
 </body>
+
 </html>
