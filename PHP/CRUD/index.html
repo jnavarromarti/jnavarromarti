@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>CRUD</h1>
-    <form method="POST" action="index.php">
+    <form method="POST" action="crud.php">
         <input type="hidden" name="id" value="">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
@@ -23,7 +23,7 @@
         </thead>
         <tbody>
             <?php
-            include 'index.php';
+            require 'index.php';
             $contacts = fetchContacts();
             foreach ($contacts as $contact) {
                 echo '<tr>';
