@@ -20,7 +20,7 @@
       <br>One Adventure
     </td>
     <td align="center">
-      <a href= "https://github.com/jnavarromarti/jnavarromarti/tree/main/Gestion%20de%20pacientes%20y%20facturacion%20excel">
+      <a href= "https://github.com/jnavarromarti/Asclepio">
         <img src="https://github.com/jnavarromarti/images/blob/main/STScI-01EVSTBRXP0R1JY17YXVW0F0AM.png" width="200" alt="Asclepio">
       </a>
       <br>Asclepio
