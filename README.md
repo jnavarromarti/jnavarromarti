@@ -20,7 +20,7 @@
       <br>One Adventure
     </td>
     <td align="center">
-      <a href= "https://github.com/jnavarromarti/BDD+Facturacion%excel">
+      <a href= "https://github.com/jnavarromarti/jnavarromarti/tree/main/BDD%2BFacturacion%20excel">
         <img src="https://github.com/jnavarromarti/images/blob/main/STScI-01EVSTBRXP0R1JY17YXVW0F0AM.png" width="200" alt="Asclepio">
       </a>
       <br>Asclepio
