@@ -8,7 +8,7 @@
 <table align="center">
   <tr>
     <td align="center">
-      <a href="https://github.com/jnavarromarti/Micropython/Cloto">
+      <a href="https://github.com/jnavarromarti/Micropython">
         <img src="https://github.com/jnavarromarti/images/blob/main/img2.png" width="200" alt="Cloto">
       </a>
       <br>Cloto
@@ -20,7 +20,7 @@
       <br>One Adventure
     </td>
     <td align="center">
-      <a href= "https://github.com/jnavarromarti/BDD+Facturacion excel">
+      <a href= "https://github.com/jnavarromarti/BDD+Facturacion%excel">
         <img src="https://github.com/jnavarromarti/images/blob/main/STScI-01EVSTBRXP0R1JY17YXVW0F0AM.png" width="200" alt="Asclepio">
       </a>
       <br>Asclepio
