@@ -5,7 +5,7 @@ class GildedRose(object):
     def __init__(self, items):
         self.items = items
 
-    def update_quality(self):  # calls para los atributos: item.name & item.quality
+    def update_quality(self):  #switch structure solution, posible solucion con funciones individuales?
         for item in self.items:
             match item.name:
                 case "Aged Brie":
