@@ -25,18 +25,22 @@ final class GildedRose
             },
             'Backstage passes to a TAFKAL80ETC concert' => function ($item) {
                 switch ($item->sellIn) {
-                    case 5 < $item->sellIn <= 10:
+                    case $item->sellIn <= 10:
                         $item->quality = min(50, $item->quality + 2);
                         $item->sellIn--;
+                        break;
                     case $item->sellIn <= 5:
                         $item->quality = min(50, $item->quality + 3);
                         $item->sellIn--;
+                        break;
                     case $item->sellIn <= 0:
-                        $item->quality == 0;
+                        $item->quality = 0;
                         $item->sellIn--;
+                        break;
                     default:
                         $item->quality++;
                         $item->sellIn--;
+                        break;
                 }
             },
             'Sulfuras, Hand of Ragnaros' => function ($item) {
