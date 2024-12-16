@@ -37,7 +37,7 @@ class GildedRose(object):
                         item.quality -= 2
                         item.sell_in -= 1
                     elif item.sell_in <= 0 and item.quality <= 0:
-                        item.quality == 0
+                        item.quality = 0
                         item.sell_in -= 1
                 case "Sulfuras, Hand of Ragnaros":
                     item.quality = item.quality
