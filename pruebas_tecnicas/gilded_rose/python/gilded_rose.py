@@ -5,7 +5,7 @@ class GildedRose(object):
     def __init__(self, items):
         self.items = items
 
-    def update_quality(self):  #switch structure solution, posible solucion con funciones individuales + while loop solucion. HAY QUE COMPRIMIR MAS EL CODIGO
+    def update_quality(self):  #switch structure solution
         for item in self.items:
             match item.name:
                 case "Aged Brie":
