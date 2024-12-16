@@ -44,10 +44,7 @@ class GildedRose(object):
                     item.sell_in = item.sell_in
                 case _:
                    match item.sell_in:
-                       case sell_in if sell_in > 0:
-                        item.quality -= 1
-                        item.sell_in -= 1
-                       case sell_in if sell_in == 0:
+                       case sell_in if sell_in >= 0:
                         item.quality -= 1
                         item.sell_in -= 1
                        case sell_in if sell_in < 0:
