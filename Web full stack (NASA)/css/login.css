@@ -1,33 +1,33 @@
 body {
     font-family: "Source Sans Pro", sans-serif;
     color: black;
-    background-image: url("../images/cosmos-1853491.jpg");
+    background-image: url("../images/fondo2.jpg");
     background-size: cover;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
 }
 
 h1{
     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
-    color: #fc3d21;
+    color: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 2.5%;
     letter-spacing: 0.2rem;
 }
-
-#block{
+#signin{
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
+    align-items: center;
+    justify-items: center;
+    margin: 15%;
 }
 #form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5%;
+    padding: 4%;
     box-sizing: border-box;
     border: 2px dashed transparent;
     min-width: 31.25em;
@@ -36,8 +36,8 @@ h1{
     max-height: 31.25em;
     border-radius: 20px;
     z-index: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 #form::before {
     content: "";
@@ -50,14 +50,13 @@ h1{
     border-radius: 10px; 
     box-sizing: border-box;
     z-index: -1;
-    animation: snakeEffect 1.5s linear infinite;
+    animation: snakeEffect 5s linear infinite;
 }
 #user-form-group{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
     text-align: start;
 }
 
@@ -70,16 +69,15 @@ h1{
 }
 #user-form-group input{
     flex: 1;
-    width: 70%;
+    width: 50%;
     height: 20%;
     padding: 1%;
     border: 2px solid #1d1d1d;
     border-radius: 10px;
     font-size: 1em;
-    z-index: 1;
 }
 #buttons-form-group{
-    margin: 5%;
+    margin: 1.5%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -87,10 +85,10 @@ h1{
 
 #buttons-form-group input{
     width: 30%;
+    max-width: 10em;
     height: 15%;
     font-weight: bolder;
     border: 2px solid white;
-    z-index: 1;
     transition: border-radius 0.5s cubic-bezier(0.1, 0.7, 1.0, 0.1);
     background-color: transparent;
     color: #fff;
@@ -102,6 +100,115 @@ h1{
     border-radius: 15px;
 }
 
+#registrer{
+    display: none;
+    align-items: center;
+    justify-items: center;
+    margin-top: 2.5%;
+}
+
+#registrerform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1%;
+    width: 80%;
+    height: 80%;
+    box-sizing: border-box;
+    border: 2px dashed transparent;
+    border-radius: 20px;
+    z-index: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#registrerform::before {
+    content: "";
+    position: absolute;
+    top: -2px; 
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px dashed #ffffff; 
+    border-radius: 10px; 
+    box-sizing: border-box;
+    z-index: -1;
+    animation: snakeEffect 5s linear infinite;
+}
+
+#buttons-signup-group input{
+    width: 7%;
+    height: 15%;
+    font-weight: bolder;
+    border: 2px solid white;
+    z-index:1;
+    transition: border-radius 0.5s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    background-color: transparent;
+    color: #fff;
+}
+#buttons-signup-group:hover input{
+    opacity: 0.75;
+    background-size: cover;
+    border-radius: 15px;
+}
+#containerSignUp{
+    display: flex;
+    flex-direction: row;
+}
+#containerSignUp > div:nth-child(1), 
+#containerSignUp > div:nth-child(2){
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    padding: 1%;
+}
+#containerSignUp > div:nth-child(1) label,
+#containerSignUp > div:nth-child(2) label{
+    margin: 1.5%;
+    align-self: flex-start;
+    margin: 5%;
+    font-size: 1em;
+    color: #ffff;
+    font-weight: bolder;
+}
+#containerSignUp > div:nth-child(1) input,
+#containerSignUp > div:nth-child(2) input{
+    flex: 1;
+    width: 65%;
+    height: 25%;
+    padding: 1%;
+    border: 2px solid #1d1d1d;
+    border-radius: 10px;
+    font-size: 1em;
+}
+#containerSignUp > div:nth-child(2) select{
+    width: 67%;
+    height: 65%;
+    border: 2px solid #1d1d1d;
+    border-radius: 10px;
+    font-size: 1.15em;
+}
+#buttons-signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+#buttons-signup input{
+    width: 10%;
+    height: 5%;
+    font-weight: bolder;
+    border: 2px solid white;
+    transition: border-radius 0.5s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    background-color: transparent;
+    color: #fff;
+}
+
+#buttons-signup:hover input{
+    opacity: 0.75;
+    background-size: cover;
+    border-radius: 15px;
+}
 @keyframes snakeEffect {
     0% {
         border-color: white transparent transparent transparent; 

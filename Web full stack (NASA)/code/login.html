@@ -4,34 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login user</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../scripts/script.js" ></script>
 </head>
 
 <body>
-    <div id="block">
-        <div id="form">
-            <form action="login.php" mthod="POST">
-                <div id="user-form-group">
-                    <label for="user">User:</label>
-                    <input type="text" id="user" name="user" placeholder="Enter user" required>
-                </div>
-                <div id="user-form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter password" required>
-                </div>
-                <div id="buttons-form-group">
-                    <input type="submit" value="Sign in">
-                    <input type="submit" value="Sign up">
-                </div>
-            </form>
+    <header></header>
+    <main>
+        <div id="signin">
+            <div id="form">
+                <form>
+                    <div id="user-form-group">
+                        <label for="user">User:</label>
+                        <input type="text" id="user" name="user" placeholder="Ingresa tu usuario" required>
+                    </div>
+                    <div id="user-form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    <div id="buttons-form-group">
+                        <input type="submit" name="signin" value="Sign in">
+                        <input type="submit" name="signup" value="Sign up">
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-    <div id="registrer"> 
-        <div>
-            
+        <div id="registrer">
+            <div id="registrerform">
+                <form>
+                    <h1>Sign up!</h1>
+                    <div id="containerSignUp">
+                        <div id="containerSignUpLeft">
+                            <label for="name">Name:</label>
+                            <input type="text" name="nameuser" id="nameuser" placeholder="Ingresa tu nombre" required>
+                            <label for="lastname">Last name:</label>
+                            <input type="text" name="lastuser" id="lastuser" placeholder="Ingresa tu apellido">
+                            <label for="newuser">User:</label>
+                            <input type="text" name="newuser" id="newuser" placeholder="Ingresa tu nombre de usuario" required>
+                            <label for="newpassword">Password:</label>
+                            <input type="password" name="newpassword" id="newpassword" placeholder="Ingresa tu contraseña" required>
+                            <label for="newpassword2">Verify password:</label>
+                            <input type="password" name="newpassword2" id="newpassword2" placeholder="Verifica tu contraseña" required>
+                            <label for="birthdate">Birth date:</label>
+                            <input type="date" name="birthdate" id="birthdate">
+                        </div>
+                        <div id="containerSignUpRight">
+                            <label for="telephone">Telephone:</label>
+                            <input type="text" name="telephone" id="telephone" placeholder="Ingresa tu teléfono">
+                            <label for="userid">ID:</label>
+                            <input type="text" name="userid" id="userid" placeholder="Ingresa tu DNI" required>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+                            <label for="city">City:</label>
+                            <select id="city" name="city">
+                                <option value="" selected disabled>Select a city</option>
+                            </select>
+                            <label for="postcode">Postal code:</label>
+                            <input type="number" name="postalcode" id="postalcode" placeholder="Ingresa tu código postal">
+                        </div>
+                    </div>
+                    <div id="buttons-form-group">
+                        <input type="submit" name="back" value="Back">
+                        <input type="submit" name="registrer" value="Sign up">
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-
+    </main>
+    <footer></footer>
 </body>
+
 </html>
