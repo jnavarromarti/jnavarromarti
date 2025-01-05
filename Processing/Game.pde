@@ -1,4 +1,4 @@
-//importamos las bibliotecas de sonido, la biblioteca de reproduccion de video, ControlP5, GIF
+//Nota final 8.4
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
