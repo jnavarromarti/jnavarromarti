@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <button class="menu-toggle">
+                <span>☰</span>
+            </button>
+            <h1 class="title">N.a.s.a</h1>
+            <img src="..\images\imgbin_space-shuttle-program-nasa-insignia-logo-png.png" alt="image" class="logo">
+        </div>
+        <div class="dropdown-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="schedule.html">Horario</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <!--He intentado importar una tabla desde boostrap pero me entra en conflicto con style.css-->
+        <div class="divfrontpage4">
+            <div class="container-table">
+                <h1 class="text-center">Itinerario Semanal para Visita al Museo de la NASA y Headquarters de
+                    Florida</h1>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Eventos / Días</th>
+                                <th scope="col">Lunes</th>
+                                <th scope="col">Martes</th>
+                                <th scope="col">Miércoles</th>
+                                <th scope="col">Jueves</th>
+                                <th scope="col">Viernes</th>
+                                <th scope="col">Sábado</th>
+                                <th scope="col">Domingo</th>
+                                <th scope="col">Horarios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="event-type">Actividades Principales</td>
+                                <td>Tour guiado por el Museo</td>
+                                <td>Visita interactiva a los Headquarters</td>
+                                <td>Taller para niños: Construcción de cohetes</td>
+                                <td>Conferencia sobre el Telescopio James Webb</td>
+                                <td>Recorrido por las instalaciones de investigación</td>
+                                <td>Actividades al aire libre: Visita al Centro de Lanzamientos</td>
+                                <td>Día de Descanso / Acceso Abierto al Público</td>
+                                <td>09:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td class="event-type">Pruebas / Exhibiciones Especiales</td>
+                                <td>Exhibición "Hubble: Ventana al Universo"</td>
+                                <td>Simulación de Misión Espacial</td>
+                                <td>Laboratorio de Astronomía para Jóvenes</td>
+                                <td>Presentación de Imágenes Capturadas por James Webb</td>
+                                <td>Exhibición "Tecnología Espacial Avanzada"</td>
+                                <td>Exhibición "Historia de los Viajes Espaciales"</td>
+                                <td>Exhibiciones Permanentes del Museo</td>
+                                <td>09:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td class="event-type">Lanzamientos / Eventos Especiales</td>
+                                <td>Sesión de Preguntas y Respuestas con Astrónomos</td>
+                                <td>Proyección de Documental "Viaje a Marte"</td>
+                                <td>Observación Nocturna con Telescopios</td>
+                                <td>Panel de Expertos en Cosmología</td>
+                                <td>Evento Especial: Lanzamiento Simulado de Sonda</td>
+                                <td>Espectáculo de Luces y Sonido sobre Lanzamientos</td>
+                                <td>No hay lanzamientos programados</td>
+                                <td>09:00 - 17:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <img src="..\images\imgbin_space-shuttle-program-nasa-insignia-logo-png.png" alt="image" class="logo"
+            href="https://www.nasa.gov/">
+        <div class="internal-list"> <!-- placeholder para menu footer o lo que sea-->
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="schedule.html">Horario</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="socialMedia">
+            <a href="https://www.facebook.com/NASA" class="text-white me-4">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.facebook.com/NASA" class="text-white me-4">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://x.com/NASA" class="text-white me-4">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@NASA" class="text-white">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+# Pong Sencillo para Dos Jugadores
+
+Este proyecto es una implementación sencilla del clásico juego Pong, desarrollado en Processing. 
+El juego está diseñado para dos jugadores, donde cada jugador controla una paleta y la pelota acelera conforme es golpeada.
