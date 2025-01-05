@@ -11,9 +11,7 @@ class Shop {
   constructor(items = []) {
     this.items = items;
   }
-  // "Aged Brie" "Backstage passes to a TAFKAL80ETC concert" "Sulfuras, Hand of Ragnaros" "Conjured Mana Cake"
-  // item.name items.sellIn item.quality
-  // nueva solucion
+  // buscar nuevas posibles soluciones, mejora de algoritmo.
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
       let item = this.items[i]
