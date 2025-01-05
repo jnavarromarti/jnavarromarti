@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación Tipo Snake con Protrusión CSS</title>
+    <style>
+        :root {
+            --contenedor-size: 250px; /* Tamaño del contenedor */
+            --protrusion: calc(var(--contenedor-size) * 0.05); /* 10% del tamaño del contenedor */
+            --rectangulo-size: calc(var(--contenedor-size) * 0.2); /* Tamaño del rectángulo (20% del contenedor) */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .contenedor {
+            position: relative;
+            width: var(--contenedor-size);
+            height: calc(var(--contenedor-size)*0.5);
+            background-color: #ffffff;
+            border: 2px solid #333;
+            overflow: visible; /* Permite que el rectángulo sobresalga */
+        }
+
+        .rectangulo {
+            position: absolute;
+            width: calc(var(--contenedor-size)*0.05);
+            height: calc(var(--contenedor-size)*0.05);
+            background-color: #2ecc71;
+            /* Posición inicial: sobresaliendo en la esquina superior izquierda */
+            top: calc(-1 * var(--protrusion));
+            left: calc(-1 * var(--protrusion));
+            animation: moverPerimetro 5s steps(4) infinite;
+        }
+
+        @keyframes moverPerimetro {
+            0% {
+                top: calc(-1 * var(--protrusion));
+                left: calc(-1 * var(--protrusion));
+            }
+            25% {
+                top: calc(-1 * var(--protrusion));
+                left: calc(var(--contenedor-size) - var(--rectangulo-size) + var(--protrusion));
+            }
+            50% {
+                top: calc(var(--contenedor-size) - var(--rectangulo-size) + var(--protrusion));
+                left: calc(var(--contenedor-size) - var(--rectangulo-size) + var(--protrusion));
+            }
+            75% {
+                top: calc(var(--contenedor-size) - var(--rectangulo-size) + var(--protrusion));
+                left: calc(-1 * var(--protrusion));
+            }
+            100% {
+                top: calc(-1 * var(--protrusion));
+                left: calc(-1 * var(--protrusion));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="rectangulo"></div>
+    </div>
+</body>
+</html>
